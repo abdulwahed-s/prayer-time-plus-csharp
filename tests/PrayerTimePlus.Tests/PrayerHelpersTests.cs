@@ -5,6 +5,64 @@ namespace PrayerTimePlus.Tests;
 public sealed class PrayerHelpersTests
 {
     [Theory]
+    [InlineData(HighLatitudeRule.TwilightAngle, Prayer.Isha)]
+    [InlineData(HighLatitudeRule.MiddleOfTheNight, Prayer.Fajr)]
+    public void WrappedOsloTimesUseChronologicalHelpers(HighLatitudeRule rule, Prayer expectedNext)
+    {
+        var times = new PrayerTimes(new Coordinates(59.9139, 10.7522), new DateComponents(2026, 6, 21),
+            CalculationMethod.MuslimWorldLeague.GetParameters() with { HighLatitudeRule = rule }, TimeSpan.FromHours(2), "NO");
+        var midnight = new DateTimeOffset(2026, 6, 21, 0, 0, 0, times.UtcOffset);
+        Assert.Equal(expectedNext, times.NextPrayer(midnight));
+        Assert.Equal(Prayer.Sunrise, times.CurrentPrayer(midnight.AddHours(10)));
+        Assert.All(TestInputs.Values(times), time => Assert.Equal(midnight.Date, time!.Value.Date));
+        if (rule == HighLatitudeRule.TwilightAngle)
+        {
+            Assert.Equal("02:21", TestInputs.Clock(times.Fajr));
+            Assert.Equal("03:54", TestInputs.Clock(times.Sunrise));
+            Assert.Equal("00:12", TestInputs.Clock(times.Isha));
+        }
+    }
+
+    [Fact]
+    public void EqualTimestampsChooseLaterCurrentAndEarlierNextPrayerNames()
+    {
+        var times = TestInputs.Sohar(CalculationMethod.MuslimWorldLeague.GetParameters() with
+        {
+            Adjustments = new PrayerAdjustments { Dhuhr = -409 },
+        });
+        var at = times.Sunrise!.Value;
+        Assert.Equal(at, times.Dhuhr);
+        Assert.Equal(Prayer.Dhuhr, times.CurrentPrayer(at));
+        Assert.Equal(Prayer.Sunrise, times.NextPrayer(at.AddTicks(-1)));
+        Assert.Equal(Prayer.Asr, times.NextPrayer(at));
+    }
+
+    [Fact]
+    public void LargeAdjustmentsReorderBoundariesByTheirInstants()
+    {
+        var times = TestInputs.Sohar(CalculationMethod.MuslimWorldLeague.GetParameters() with
+        {
+            Adjustments = new PrayerAdjustments { Dhuhr = 600 },
+        });
+        Assert.Equal("22:16", TestInputs.Clock(times.Dhuhr));
+        Assert.Equal(Prayer.Sunrise, times.CurrentPrayer(times.Asr!.Value.AddTicks(-1)));
+        Assert.Equal(Prayer.Asr, times.NextPrayer(times.Sunrise!.Value));
+        Assert.Equal(Prayer.Dhuhr, times.NextPrayer(times.Isha!.Value));
+        Assert.Equal(Prayer.Dhuhr, times.CurrentPrayer(times.Dhuhr!.Value));
+    }
+
+    [Fact]
+    public void NegativeOffsetCanMoveMorningBoundariesAfterIsha()
+    {
+        var times = TestInputs.Sohar(offset: TimeSpan.FromMinutes(-210));
+        Assert.Equal("20:29", TestInputs.Clock(times.Fajr));
+        Assert.Equal(Prayer.Fajr, times.NextPrayer(times.Isha!.Value));
+        Assert.Equal(Prayer.Fajr, times.CurrentPrayer(times.Fajr!.Value));
+        Assert.Equal(Prayer.Sunrise, times.NextPrayer(times.Fajr.Value));
+        Assert.Equal(Prayer.None, times.NextPrayer(times.Sunrise!.Value));
+    }
+
+    [Theory]
     [InlineData(Prayer.Fajr, Prayer.Sunrise)]
     [InlineData(Prayer.Sunrise, Prayer.Dhuhr)]
     [InlineData(Prayer.Dhuhr, Prayer.Asr)]

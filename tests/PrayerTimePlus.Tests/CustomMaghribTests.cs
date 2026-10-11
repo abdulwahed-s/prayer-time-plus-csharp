@@ -4,6 +4,47 @@ namespace PrayerTimePlus.Tests;
 
 public sealed class CustomMaghribTests
 {
+    [Fact]
+    public void BareParametersTreatAnOmittedMaghribFlagAsAnAngle()
+    {
+        var times = TestInputs.Sohar(new CalculationParameters
+        {
+            FajrAngle = 18.0,
+            MaghribValue = 4.0,
+            IshaIsInterval = true,
+            IshaValue = 90.0,
+            HighLatitudeRule = HighLatitudeRule.None,
+        });
+        Assert.Equal("19:05", TestInputs.Clock(times.Sunset));
+        Assert.Equal("19:21", TestInputs.Clock(times.Maghrib));
+        Assert.Equal("20:51", TestInputs.Clock(times.Isha));
+    }
+
+    [Fact]
+    public void BareParametersCanExplicitlySelectAnInterval()
+    {
+        var times = TestInputs.Sohar(new CalculationParameters
+        {
+            MaghribIsInterval = true,
+            MaghribValue = 4.0,
+            IshaIsInterval = true,
+            IshaValue = 90.0,
+            HighLatitudeRule = HighLatitudeRule.None,
+        });
+        Assert.Equal("19:09", TestInputs.Clock(times.Maghrib));
+        Assert.Equal("20:39", TestInputs.Clock(times.Isha));
+    }
+
+    [Fact]
+    public void BareZeroValueUsesSunsetAndTheDefaultIshaAngle()
+    {
+        var parameters = new CalculationParameters { HighLatitudeRule = HighLatitudeRule.None };
+        Assert.False(parameters.MaghribIsInterval);
+        var times = TestInputs.Sohar(parameters);
+        Assert.Equal(times.Sunset, times.Maghrib);
+        Assert.Equal("20:28", TestInputs.Clock(times.Isha));
+    }
+
     private static CalculationParameters AngleParameters => CalculationMethod.Custom.GetParameters() with
     {
         HighLatitudeRule = HighLatitudeRule.None,

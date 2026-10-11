@@ -118,6 +118,10 @@ back to Sunset plus Maghrib adjustments. In interval mode, Maghrib is Sunset
 plus `MaghribValue` minutes and its adjustments. Interval Isha starts at the
 final Maghrib, then adds `IshaValue` minutes and its own adjustments.
 
+Bare `new CalculationParameters()` defaults `MaghribIsInterval` to false:
+an omitted flag makes a positive `MaghribValue` an angle in degrees. In contrast,
+the `Custom` preset explicitly uses interval=true with a zero-minute value.
+
 The caller sets `IsRamadan`. With method key `makkah` and country `SA`
 (case-insensitive), it adds 30 minutes to Isha before high-latitude correction.
 The library performs no Hijri calendar conversion.
@@ -137,6 +141,23 @@ Sunrise. Current is the latest boundary at or before the supplied instant;
 next is the earliest strictly after it. Current returns `None` before the
 day's first defined boundary, and next returns `None` after the last. `None`
 has no time. Omitting the instant reads the current UTC clock.
+
+Helpers use actual timestamp order when midnight wrapping or adjustments make
+the prayer names unordered. Equal timestamps select the later prayer name for
+current and the earlier name for next, in Fajr → Sunrise → Dhuhr → Asr → Maghrib
+→ Isha order. Kotlin and Dart 0.3.0 helpers scan that fixed name order instead,
+so helper answers can differ for reordered schedules even when all seven
+calculated prayer minutes match. For Oslo on 2026-06-21, +02:00, MWL/Shafi and
+TwilightAngle, Isha is 00:12 on the requested date: C# selects Isha as next at
+00:00, and Sunrise as current at 10:00. The sibling helpers select Fajr and
+Isha respectively. `NextPrayer` only examines this constructed day; consumers
+must calculate tomorrow with its correct DST offset after the day's last event.
+
+Minute-level compatibility covers the supported solar calculations. C# and
+Kotlin treat `cityName` as a label, while Dart applies city-specific tweaks for
+some presets. Those application adjustments are outside the C# engine. C#
+preserves country/city context when recomputing tomorrow for Sunnah, matching
+Kotlin; Dart 0.3.0 omits that context and can produce different night portions.
 
 `PrayerTimes.Today(coordinates, parameters, offset)` chooses today's date at
 the supplied offset. Calculation for an explicit date never reads the clock.

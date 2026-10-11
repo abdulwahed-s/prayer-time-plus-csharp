@@ -104,6 +104,8 @@ public sealed class PrayerTimes
     /// <summary>Finds the latest defined prayer boundary at or before an instant, including Sunrise.</summary>
     /// <param name="at">Comparison instant; null defaults to the current UTC clock.</param>
     /// <returns>The current prayer, or None before the first defined boundary.</returns>
+    /// <remarks>Orders by actual instants even when wrapping or adjustments reorder the prayer names.
+    /// At equal times, the later name in Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha order wins.</remarks>
     public Prayer CurrentPrayer(DateTimeOffset? at = null)
     {
         var instant = at ?? DateTimeOffset.UtcNow;
@@ -124,6 +126,8 @@ public sealed class PrayerTimes
     /// <summary>Finds the earliest defined boundary strictly after an instant, including Sunrise.</summary>
     /// <param name="at">Comparison instant; null defaults to the current UTC clock.</param>
     /// <returns>The next prayer, or None after the last defined boundary.</returns>
+    /// <remarks>Orders by actual instants even when wrapping or adjustments reorder the prayer names.
+    /// At equal times, the earlier name in Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha order wins.</remarks>
     public Prayer NextPrayer(DateTimeOffset? at = null)
     {
         var instant = at ?? DateTimeOffset.UtcNow;

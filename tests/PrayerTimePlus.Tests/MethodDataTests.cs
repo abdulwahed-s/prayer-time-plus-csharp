@@ -91,7 +91,8 @@ public sealed class MethodDataTests
     public void CustomNoneAndDubaiKeepSharedDefaults()
     {
         var custom = CalculationMethod.Custom.GetParameters();
-        Assert.Equal(new CalculationParameters { Method = "custom" }, custom);
+        Assert.Equal(new CalculationParameters { Method = "custom", MaghribIsInterval = true }, custom);
+        Assert.False(new CalculationParameters().MaghribIsInterval);
         Assert.Equal(custom with { Method = "none" }, CalculationMethod.None.GetParameters());
         Assert.Equal(custom with { Method = "dubai" }, CalculationMethod.Dubai.GetParameters());
         Assert.Equal(CalculationMethod.MuslimWorldLeague, AutoMethod.ForCountry(null));
