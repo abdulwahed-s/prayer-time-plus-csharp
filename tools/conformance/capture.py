@@ -45,6 +45,11 @@ def read_results(output):
     return results
 
 
+def parse_instant(value):
+    normalized = value[:-1] + "+00:00" if value.endswith("Z") else value
+    return dt.datetime.fromisoformat(normalized)
+
+
 def helpers_from_instants(case, times):
     # Derive the declared C# policy from independent captured instants, never C# output.
     boundaries = [(name, times[SLOTS.index(name)]) for name in PRAYERS
@@ -54,10 +59,10 @@ def helpers_from_instants(case, times):
     queries = []
     for hour in range(24):
         at = dt.datetime(year, month, day, hour, tzinfo=offset).astimezone(dt.timezone.utc)
-        before = [(dt.datetime.fromisoformat(value["utc"]), PRAYERS.index(name), name)
-                  for name, value in boundaries if dt.datetime.fromisoformat(value["utc"]) <= at]
-        after = [(dt.datetime.fromisoformat(value["utc"]), PRAYERS.index(name), name)
-                 for name, value in boundaries if dt.datetime.fromisoformat(value["utc"]) > at]
+        before = [(parse_instant(value["utc"]), PRAYERS.index(name), name)
+                  for name, value in boundaries if parse_instant(value["utc"]) <= at]
+        after = [(parse_instant(value["utc"]), PRAYERS.index(name), name)
+                 for name, value in boundaries if parse_instant(value["utc"]) > at]
         queries.append({"localHour": hour, "current": max(before)[2] if before else "none",
                         "next": min(after)[2] if after else "none"})
     return queries
