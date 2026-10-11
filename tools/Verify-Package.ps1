@@ -57,17 +57,20 @@ try {
     $symbolArchive.Dispose()
 }
 
-$smokeRoot = Join-Path $repositoryRoot ('artifacts/package-smoke-' + [guid]::NewGuid().ToString('N'))
-New-Item -ItemType Directory -Path $smokeRoot | Out-Null
-$smokeProject = Join-Path $smokeRoot 'PackageSmoke.csproj'
-$cache = Join-Path $smokeRoot 'nuget-cache'
-$config = Join-Path $smokeRoot 'NuGet.Config'
-$utf8 = [Text.UTF8Encoding]::new($false)
-[IO.File]::WriteAllText($smokeProject, @"
+$runRoot = Join-Path $repositoryRoot ('artifacts/package-smoke-' + [guid]::NewGuid().ToString('N'))
+foreach ($runtimeMajor in @(8, 10)) {
+    $smokeRoot = Join-Path $runRoot "net$runtimeMajor"
+    New-Item -ItemType Directory -Path $smokeRoot | Out-Null
+    $smokeProject = Join-Path $smokeRoot 'PackageSmoke.csproj'
+    $cache = Join-Path $smokeRoot 'nuget-cache'
+    $config = Join-Path $smokeRoot 'NuGet.Config'
+    $utf8 = [Text.UTF8Encoding]::new($false)
+    [IO.File]::WriteAllText($smokeProject, @"
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net$runtimeMajor.0</TargetFramework>
+    <RollForward>LatestPatch</RollForward>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
@@ -77,8 +80,8 @@ $utf8 = [Text.UTF8Encoding]::new($false)
   </ItemGroup>
 </Project>
 "@, $utf8)
-$escapedFeed = [Security.SecurityElement]::Escape($feed)
-[IO.File]::WriteAllText($config, @"
+    $escapedFeed = [Security.SecurityElement]::Escape($feed)
+    [IO.File]::WriteAllText($config, @"
 <configuration>
   <packageSources>
     <clear />
@@ -86,9 +89,14 @@ $escapedFeed = [Security.SecurityElement]::Escape($feed)
   </packageSources>
 </configuration>
 "@, $utf8)
-[IO.File]::WriteAllText((Join-Path $smokeRoot 'Program.cs'), @'
+    [IO.File]::WriteAllText((Join-Path $smokeRoot 'Program.cs'), @'
 using System.Globalization;
 using PrayerTimePlus;
+
+if (Environment.Version.Major != EXPECTED_RUNTIME_MAJOR)
+{
+    throw new InvalidOperationException($"Expected .NET EXPECTED_RUNTIME_MAJOR, actually running {Environment.Version}.");
+}
 
 var offset = TimeSpan.FromHours(4);
 var location = new Coordinates(24.3486, 56.6953, altitude: 5.0);
@@ -113,6 +121,18 @@ var custom = CalculationMethod.Custom.GetParameters() with
     IshaIsInterval = true,
     IshaValue = 90.0
 };
+var bare = new PrayerTimes(location, date, new CalculationParameters
+{
+    MaghribValue = 4.0,
+    IshaIsInterval = true,
+    IshaValue = 90.0,
+    HighLatitudeRule = HighLatitudeRule.None
+}, offset, "OM");
+if (bare.Maghrib?.ToString("HH:mm", CultureInfo.InvariantCulture) != "19:21"
+    || bare.Isha?.ToString("HH:mm", CultureInfo.InvariantCulture) != "20:51")
+{
+    throw new InvalidOperationException("Packaged bare Maghrib default mismatch.");
+}
 var baseline = new PrayerTimes(location, date, custom, offset, "OM");
 var tuned = new PrayerTimes(location, date, custom with
 {
@@ -130,13 +150,14 @@ if (times.CurrentPrayer(times.Dhuhr!.Value) != Prayer.Dhuhr || times.NextPrayer(
 {
     throw new InvalidOperationException("Packaged helper mismatch.");
 }
-Console.WriteLine("NuGet consumer smoke test passed: exact goldens, custom tuning, offsets and helpers.");
-'@, $utf8)
+Console.WriteLine($"NuGet consumer passed on .NET {Environment.Version}: goldens, bare defaults, tuning, offsets and helpers.");
+'@.Replace('EXPECTED_RUNTIME_MAJOR', [string]$runtimeMajor), $utf8)
 
-& dotnet restore $smokeProject --configfile $config --packages $cache
-if ($LASTEXITCODE -ne 0) { throw 'Local-feed consumer restore failed.' }
-& dotnet run --project $smokeProject -c Release --no-restore
-if ($LASTEXITCODE -ne 0) { throw 'Packaged consumer failed.' }
-Write-Output "Package contents and metadata verified: $package"
-Write-Output "SHA256: $((Get-FileHash -LiteralPath $package -Algorithm SHA256).Hash)"
-Write-Output "Isolated consumer/cache: $smokeRoot"
+    & dotnet restore $smokeProject --configfile $config --packages $cache
+    if ($LASTEXITCODE -ne 0) { throw 'Local-feed consumer restore failed.' }
+    & dotnet run --project $smokeProject -c Release --no-restore
+    if ($LASTEXITCODE -ne 0) { throw 'Packaged consumer failed.' }
+    Write-Output "Package contents and metadata verified: $package"
+    Write-Output "SHA256: $((Get-FileHash -LiteralPath $package -Algorithm SHA256).Hash)"
+    Write-Output "Isolated consumer/cache: $smokeRoot"
+}

@@ -3,7 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>PrayerTimePlus</AssemblyName>
     <RootNamespace>PrayerTimePlus</RootNamespace>
-    <Version>0.1.0</Version>
+    <Version>0.3.0</Version>
     <PackageId>PrayerTimePlus</PackageId>
     <Authors>abdulwahed-s</Authors>
     <Description>Dependency-free Islamic prayer times and Sunnah times for .NET.</Description>

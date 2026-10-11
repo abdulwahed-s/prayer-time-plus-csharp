@@ -3,15 +3,17 @@
 A dependency-free C# library for Islamic prayer times and Sunnah night portions.
 The `net8.0` library uses immutable inputs, nullable `DateTimeOffset` results and
 the caller's UTC offset. It implements the supported prayer-time calculations
-of the Dart, Swift and Kotlin 0.3.0 siblings. The C# package starts at **0.1.0**.
+of the Dart, Swift and Kotlin 0.3.0 siblings. The initial C# package is **0.3.0**,
+aligned with that family version; helper and city-context differences are
+described below.
 
 ## Install
 
-Version 0.1.0 is prepared for NuGet distribution. To install the locally built
+Version 0.3.0 is prepared for NuGet distribution. To install the locally built
 package into a consumer project:
 
 ```sh
-dotnet add package PrayerTimePlus --version 0.1.0 --source /absolute/path/to/artifacts/packages
+dotnet add package PrayerTimePlus --version 0.3.0 --source /absolute/path/to/artifacts/packages
 ```
 
 Public feed publication is a separate release action. The library requires
@@ -194,7 +196,9 @@ dotnet run --project examples/PrayerTimePlus.Example -c Release --no-build -- 20
 
 The example also compiles and demonstrates customization and helper APIs.
 `tools/Verify-Package.ps1` checks package contents and runs a fresh consumer
-with an isolated cache and a package reference using only the local feed:
+for each of .NET 8 and .NET 10, with isolated caches and package references
+using only the local feed. Install both runtimes and their reference packs;
+the SDKs include them. Each consumer asserts the actual runtime major version:
 
 ```powershell
 pwsh -File tools/Verify-Package.ps1
@@ -204,7 +208,10 @@ Tests contain exact Sohar/Mecca goldens, custom-angle conformance and captured
 fixed-input Dart sibling vectors across presets, both Asr schools, all
 high-latitude choices, fractional offsets, leap dates and hemispheres. Fixtures
 and generator inputs are committed; builds require no sibling repositories.
-Generated code remains subject to analyzers and formatting. Regenerate tables
+Focused custom/Sunnah cases include source revisions and normalized instants;
+[the optional capture recipe](tools/conformance/README.md) records the selected
+helper policy and the known Dart context exceptions. Generated code remains
+subject to analyzers and formatting. Regenerate tables
 and method documentation with:
 
 ```sh

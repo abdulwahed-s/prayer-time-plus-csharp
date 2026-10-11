@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
+          dotnet-version: '8.0.x'
+          dotnet-quality: ga
       - run: dotnet restore PrayerTimePlus.slnx
       - run: dotnet build PrayerTimePlus.slnx -c Release --no-restore -p:ContinuousIntegrationBuild=true
       - run: dotnet format PrayerTimePlus.slnx --verify-no-changes --no-restore
