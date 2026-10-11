@@ -1,0 +1,197 @@
+# PrayerTimePlus for .NET
+
+A dependency-free C# library for Islamic prayer times and Sunnah night portions.
+The `net8.0` library uses immutable inputs, nullable `DateTimeOffset` results and
+the caller's UTC offset. It implements the supported prayer-time calculations
+of the Dart, Swift and Kotlin 0.3.0 siblings. The C# package starts at **0.1.0**.
+
+## Install
+
+Version 0.1.0 is prepared for NuGet distribution. To install the locally built
+package into a consumer project:
+
+```sh
+dotnet add package PrayerTimePlus --version 0.1.0 --source /absolute/path/to/artifacts/packages
+```
+
+Public feed publication is a separate release action. The library requires
+.NET 8 or later and has no third-party runtime dependencies.
+
+## Calculate a day
+
+```csharp
+using PrayerTimePlus;
+
+var times = new PrayerTimes(
+    coordinates: new Coordinates(24.3486, 56.6953, altitude: 5.0),
+    dateComponents: new DateComponents(2026, 6, 28),
+    calculationParameters: CalculationMethod.Oman.GetParameters(),
+    utcOffset: TimeSpan.FromHours(4),
+    countryCode: "OM",
+    cityName: "sohar");
+
+Console.WriteLine(times.Fajr?.ToString("HH:mm"));    // 03:59
+Console.WriteLine(times.Maghrib?.ToString("HH:mm")); // 19:10
+Console.WriteLine(times.Isha?.ToString("HH:mm"));    // 20:35
+```
+
+The seven properties are `Fajr`, `Sunrise`, `Dhuhr`, `Asr`, `Sunset`, `Maghrib`
+and `Isha`. Each defined result carries the supplied offset; `.UtcDateTime`
+gives its absolute UTC instant. Undefined solar events return `null`.
+
+The date is a Gregorian civil date. A `DateOnly` can be adapted with
+`DateComponents.From(date)`. UTC offsets must contain whole minutes and fall
+within ±14 hours; include the DST adjustment for the requested date yourself.
+Offsets such as `TimeSpan.FromMinutes(345)` (+05:45) are supported. The library
+does not discover time zones or locations.
+
+Ordinary prayer times round to a minute and wrap to the requested civil date,
+even if an intermediate hour crosses midnight. Gregorian dates use years
+1–9999. An invalid date, default `DateComponents`, invalid enum or invalid
+offset throws an argument exception. At the date-range endpoints, a UTC
+instant outside years 1–9999 also throws `ArgumentOutOfRangeException`.
+
+`Coordinates` accepts arbitrary doubles. Choose
+`Coordinates.Validated(latitude, longitude, altitude)` to require finite
+latitude in [-90, 90], longitude in [-180, 180] and non-negative altitude in
+metres. East longitude is positive. Elevation affects only the methods and
+countries listed in [METHODS.md](METHODS.md). `cityName` is a caller label and
+does not affect the calculation.
+
+## Presets, Auto and adjustments
+
+[METHODS.md](METHODS.md) lists every supported stable key, angle, interval and
+minute offset. `CalculationMethods.FromKey("oman")` resolves exact keys;
+unknown, null, case-altered or whitespace-padded keys return `null`.
+`Custom` and the `None` placeholder use the shared MWL defaults. The `Dubai`
+label uses MWL numeric fallback values.
+
+```csharp
+var method = AutoMethod.ForCountry("OM");
+var parameters = method.GetParameters() with
+{
+    Madhab = Madhab.Hanafi,
+    HighLatitudeRule = HighLatitudeRule.SeventhOfTheNight,
+    Adjustments = new PrayerAdjustments { Fajr = 2 }
+};
+```
+
+Auto uses the compiled country map, matches invariant case without trimming,
+and falls back to Muslim World League for unknown, empty or null country codes.
+Pass the country code to `PrayerTimes` too, for country-dependent elevation
+and Ramadan behavior. Presets return fresh immutable records. Customize them
+with `with`; `MethodAdjustments` and caller `Adjustments` are combined once.
+Their signed integer values are minutes. Sunset has no adjustment slot.
+
+Shafi is the default Asr school and uses shadow factor 1. Hanafi uses factor 2.
+The default high-latitude rule is `Automatic`: calculate with `None`, then
+retry once using the literal night fraction `0.14286` if rounded Fajr is null
+or midnight, or Isha is null or in hour 0 or 12. Explicit rules are:
+
+- `None`: preserve unavailable twilight as null.
+- `MiddleOfTheNight`: half the sunset-to-sunrise night.
+- `SeventhOfTheNight`: the literal fraction `0.14286` of the night.
+- `TwilightAngle`: the prayer's depression angle divided by 60 of the night;
+  interval Isha uses 18 degrees for this rule.
+
+Night corrections limit twilight only when the natural result is undefined
+or farther from its anchor than the permitted fraction. An unavailable
+Sunrise or Sunset can still leave twilight null under any rule.
+
+## Custom Maghrib and Isha
+
+```csharp
+var custom = CalculationMethod.Custom.GetParameters() with
+{
+    HighLatitudeRule = HighLatitudeRule.None,
+    MaghribIsInterval = false,
+    MaghribValue = 4.0,
+    IshaIsInterval = true,
+    IshaValue = 90.0
+};
+```
+
+Fajr always uses a depression angle in degrees. In angle mode, positive
+Maghrib values use a finite evening angle later than Sunset and earlier than
+angle-based Isha. A non-positive, unavailable or non-chronological angle falls
+back to Sunset plus Maghrib adjustments. In interval mode, Maghrib is Sunset
+plus `MaghribValue` minutes and its adjustments. Interval Isha starts at the
+final Maghrib, then adds `IshaValue` minutes and its own adjustments.
+
+The caller sets `IsRamadan`. With method key `makkah` and country `SA`
+(case-insensitive), it adds 30 minutes to Isha before high-latitude correction.
+The library performs no Hijri calendar conversion.
+
+## Current, next and Sunnah times
+
+```csharp
+var current = times.CurrentPrayer(times.Dhuhr!.Value);
+var next = times.NextPrayer(times.Dhuhr.Value); // Asr
+var fajr = times.TimeForPrayer(Prayer.Fajr);
+var sunnah = new SunnahTimes(times);
+Console.WriteLine(sunnah.LastThirdOfTheNight);
+```
+
+Current/next compare absolute instants, skip undefined values and include
+Sunrise. Current is the latest boundary at or before the supplied instant;
+next is the earliest strictly after it. Current returns `None` before the
+day's first defined boundary, and next returns `None` after the last. `None`
+has no time. Omitting the instant reads the current UTC clock.
+
+`PrayerTimes.Today(coordinates, parameters, offset)` chooses today's date at
+the supplied offset. Calculation for an explicit date never reads the clock.
+
+Sunnah times run from today's final Maghrib to tomorrow's recomputed Fajr,
+using the same inputs and offset. They can fall on the following date and
+round to a minute after integer-second night division. Either missing boundary
+makes both values null. Tomorrow beyond year 9999 throws an argument exception.
+If DST changes overnight, calculate the required days and boundaries in your
+application using their respective offsets.
+
+## Build, example and verification
+
+Install the stable .NET SDK pinned in [global.json](global.json). The library
+targets `net8.0`; the example, tests and generator target `net10.0`. From the
+repository root:
+
+```sh
+dotnet restore PrayerTimePlus.slnx
+dotnet build PrayerTimePlus.slnx -c Release --no-restore
+dotnet format PrayerTimePlus.slnx --verify-no-changes --no-restore
+dotnet test tests/PrayerTimePlus.Tests/PrayerTimePlus.Tests.csproj -c Release --no-build --no-restore
+dotnet run --project examples/PrayerTimePlus.Example -c Release --no-build
+dotnet run --project tools/PrayerTimePlus.DataGenerator -c Release --no-build -- --check
+dotnet pack src/PrayerTimePlus/PrayerTimePlus.csproj -c Release --no-build --no-restore -o artifacts/packages
+```
+
+The console example defaults to Sohar on 2026-06-28. For another date and
+location, provide `yyyy-MM-dd latitude longitude utc-offset-minutes country`:
+
+```sh
+dotnet run --project examples/PrayerTimePlus.Example -c Release --no-build -- 2026-06-28 24.3486 56.6953 240 OM
+```
+
+The example also compiles and demonstrates customization and helper APIs.
+`tools/Verify-Package.ps1` checks package contents and runs a fresh consumer
+with an isolated cache and a package reference using only the local feed:
+
+```powershell
+pwsh -File tools/Verify-Package.ps1
+```
+
+Tests contain exact Sohar/Mecca goldens, custom-angle conformance and captured
+fixed-input Dart sibling vectors across presets, both Asr schools, all
+high-latitude choices, fractional offsets, leap dates and hemispheres. Fixtures
+and generator inputs are committed; builds require no sibling repositories.
+Generated code remains subject to analyzers and formatting. Regenerate tables
+and method documentation with:
+
+```sh
+dotnet run --project tools/PrayerTimePlus.DataGenerator -c Release
+```
+
+CI runs the checks on Windows, Linux and macOS. Runtime scope covers the
+calculation library; Qibla, Shia presets, static city tables, seasonal changes,
+application city tweaks, geolocation, scheduling and native UI are outside it.
+
+Licensed under [MIT](LICENSE).

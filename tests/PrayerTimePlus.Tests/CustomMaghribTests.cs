@@ -23,6 +23,15 @@ public sealed class CustomMaghribTests
     [Theory]
     [InlineData(0.0)]
     [InlineData(-4.0)]
+    public void NonPositiveAnglesWithZeroOffsetsUseSunset(double angle)
+    {
+        var times = TestInputs.Sohar(AngleParameters with { MaghribValue = angle });
+        Assert.Equal(times.Sunset, times.Maghrib);
+    }
+
+    [Theory]
+    [InlineData(0.0)]
+    [InlineData(-4.0)]
     [InlineData(20.0)]
     [InlineData(double.NaN)]
     public void InvalidOrNonChronologicalAnglesFallBackWithOffsets(double angle)
