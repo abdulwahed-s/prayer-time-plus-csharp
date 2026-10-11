@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/abdulwahed-s/prayer-time-plus-csharp/security/advisories/new
+    about: Report vulnerabilities privately via a security advisory.
+  - name: Dart / Flutter package
+    url: https://github.com/abdulwahed-s/prayer_time_plus
+    about: Use the Dart / Flutter repository for reports about that port.
+  - name: Swift package
+    url: https://github.com/abdulwahed-s/prayer-time-plus-swift
+    about: Use the Swift repository for reports about that port.
+  - name: Kotlin / JVM package
+    url: https://github.com/abdulwahed-s/prayer-time-plus-kotlin
+    about: Use the Kotlin / JVM repository for reports about that port.
