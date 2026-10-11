@@ -1,0 +1,38 @@
+{
+  "defaults": {
+    "construction": "preset",
+    "method": "custom",
+    "coordinates": [24.3486, 56.6953, 5.0],
+    "date": [2026, 6, 28],
+    "offsetMinutes": 240,
+    "country": "OM",
+    "city": "",
+    "madhab": 0,
+    "rule": 1,
+    "ramadan": false,
+    "parameters": {},
+    "adjustments": {}
+  },
+  "cases": [
+    { "id": "bare-angle-default", "construction": "direct", "parameters": { "maghribValue": 4, "ishaIsInterval": true, "ishaValue": 90 } },
+    { "id": "bare-explicit-interval", "construction": "direct", "parameters": { "maghribIsInterval": true, "maghribValue": 4, "ishaIsInterval": true, "ishaValue": 90 } },
+    { "id": "bare-zero-default", "construction": "direct" },
+    { "id": "custom-angle-interval", "parameters": { "maghribIsInterval": false, "maghribValue": 4, "ishaIsInterval": true, "ishaValue": 90 } },
+    { "id": "custom-combined-tuning", "parameters": { "maghribIsInterval": false, "maghribValue": 4, "ishaIsInterval": true, "ishaValue": 90 }, "methodAdjustments": { "maghrib": 2, "isha": 3 }, "adjustments": { "maghrib": 3, "isha": 4 } },
+    { "id": "custom-invalid-chronology", "parameters": { "maghribIsInterval": false, "maghribValue": 20, "ishaValue": 17 } },
+    { "id": "london-unavailable-angle", "coordinates": [51.508, -0.1281, 0], "date": [2026, 7, 9], "offsetMinutes": 60, "country": "GB", "parameters": { "maghribIsInterval": false, "maghribValue": 18, "ishaIsInterval": true, "ishaValue": 90 } },
+    { "id": "sa-ramadan", "method": "makkah", "coordinates": [21.42667, 39.82611, 0], "offsetMinutes": 180, "country": "sa", "ramadan": true },
+    { "id": "sunnah-sohar", "method": "oman" },
+    { "id": "sunnah-year-rollover", "method": "oman", "date": [2026, 12, 31] },
+    { "id": "sunnah-leap-date", "method": "oman", "date": [2024, 2, 29] },
+    { "id": "sunnah-country-elevation", "method": "mwl", "coordinates": [50, 14, 3000], "date": [2026, 6, 21], "offsetMinutes": 120, "country": "CZ", "city": "Prague", "rule": 3, "allowDartSunnahDifference": true },
+    { "id": "oslo-twilight-helpers", "method": "mwl", "coordinates": [59.9139, 10.7522, 0], "date": [2026, 6, 21], "offsetMinutes": 120, "country": "NO", "rule": 4 },
+    { "id": "oslo-middle-helpers", "method": "mwl", "coordinates": [59.9139, 10.7522, 0], "date": [2026, 6, 21], "offsetMinutes": 120, "country": "NO", "rule": 2 },
+    { "id": "equal-boundaries", "method": "mwl", "adjustments": { "dhuhr": -409 } },
+    { "id": "reordered-adjustments", "method": "mwl", "adjustments": { "dhuhr": 600 } },
+    { "id": "negative-offset-helpers", "method": "mwl", "offsetMinutes": -210 },
+    { "id": "fractional-offset", "method": "oman", "offsetMinutes": 345 },
+    { "id": "undefined-polar-boundaries", "method": "mwl", "coordinates": [78.2232, 15.6469, 0], "date": [2026, 6, 21], "offsetMinutes": 120, "country": "NO", "rule": 0 },
+    { "id": "excluded-city-tweaks", "method": "birmingham", "coordinates": [51.508, -0.1281, 0], "offsetMinutes": 60, "country": "GB", "city": "London", "rule": 0, "allowDartPrayerDifference": true, "allowDartSunnahDifference": true }
+  ]
+}

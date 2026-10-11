@@ -1,0 +1,5659 @@
+{
+  "schemaVersion": 1,
+  "sources": {
+    "dart": {
+      "repository": "https://github.com/abdulwahed-s/prayer_time_plus",
+      "revision": "39804e56b2d33243e28ccc37f98db374a0912606"
+    },
+    "kotlin": {
+      "repository": "https://github.com/abdulwahed-s/prayer-time-plus-kotlin",
+      "revision": "800a86c5bc01e262b1ed0d01253c27fae31799e4",
+      "jarSha256": "13107c025797ece18df94ac46330b1ea5ffbb319e1e792ba2ac94eecc1efd242"
+    }
+  },
+  "helperPolicy": "Chronological instants; current ties use the later prayer name, next ties the earlier.",
+  "vectors": [
+    {
+      "input": {
+        "construction": "direct",
+        "method": "custom",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {
+          "maghribValue": 4,
+          "ishaIsInterval": true,
+          "ishaValue": 90
+        },
+        "adjustments": {},
+        "id": "bare-angle-default"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:21",
+            "utc": "2026-06-28T15:21Z"
+          },
+          {
+            "local": "2026-06-28T20:51",
+            "utc": "2026-06-28T16:51Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:40",
+            "utc": "2026-06-28T19:40Z"
+          },
+          {
+            "local": "2026-06-29T01:06",
+            "utc": "2026-06-28T21:06Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:21",
+            "utc": "2026-06-28T15:21Z"
+          },
+          {
+            "local": "2026-06-28T20:51",
+            "utc": "2026-06-28T16:51Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:40",
+            "utc": "2026-06-28T19:40Z"
+          },
+          {
+            "local": "2026-06-29T01:06",
+            "utc": "2026-06-28T21:06Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "direct",
+        "method": "custom",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {
+          "maghribIsInterval": true,
+          "maghribValue": 4,
+          "ishaIsInterval": true,
+          "ishaValue": 90
+        },
+        "adjustments": {},
+        "id": "bare-explicit-interval"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:09",
+            "utc": "2026-06-28T15:09Z"
+          },
+          {
+            "local": "2026-06-28T20:39",
+            "utc": "2026-06-28T16:39Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:34",
+            "utc": "2026-06-28T19:34Z"
+          },
+          {
+            "local": "2026-06-29T01:02",
+            "utc": "2026-06-28T21:02Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:09",
+            "utc": "2026-06-28T15:09Z"
+          },
+          {
+            "local": "2026-06-28T20:39",
+            "utc": "2026-06-28T16:39Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:34",
+            "utc": "2026-06-28T19:34Z"
+          },
+          {
+            "local": "2026-06-29T01:02",
+            "utc": "2026-06-28T21:02Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "direct",
+        "method": "custom",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "bare-zero-default"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:28",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:32",
+            "utc": "2026-06-28T19:32Z"
+          },
+          {
+            "local": "2026-06-29T01:01",
+            "utc": "2026-06-28T21:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:28",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:32",
+            "utc": "2026-06-28T19:32Z"
+          },
+          {
+            "local": "2026-06-29T01:01",
+            "utc": "2026-06-28T21:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "custom",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {
+          "maghribIsInterval": false,
+          "maghribValue": 4,
+          "ishaIsInterval": true,
+          "ishaValue": 90
+        },
+        "adjustments": {},
+        "id": "custom-angle-interval"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:21",
+            "utc": "2026-06-28T15:21Z"
+          },
+          {
+            "local": "2026-06-28T20:51",
+            "utc": "2026-06-28T16:51Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:40",
+            "utc": "2026-06-28T19:40Z"
+          },
+          {
+            "local": "2026-06-29T01:06",
+            "utc": "2026-06-28T21:06Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:21",
+            "utc": "2026-06-28T15:21Z"
+          },
+          {
+            "local": "2026-06-28T20:51",
+            "utc": "2026-06-28T16:51Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:40",
+            "utc": "2026-06-28T19:40Z"
+          },
+          {
+            "local": "2026-06-29T01:06",
+            "utc": "2026-06-28T21:06Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "custom",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {
+          "maghribIsInterval": false,
+          "maghribValue": 4,
+          "ishaIsInterval": true,
+          "ishaValue": 90
+        },
+        "adjustments": {
+          "maghrib": 3,
+          "isha": 4
+        },
+        "id": "custom-combined-tuning",
+        "methodAdjustments": {
+          "maghrib": 2,
+          "isha": 3
+        }
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:26",
+            "utc": "2026-06-28T15:26Z"
+          },
+          {
+            "local": "2026-06-28T21:03",
+            "utc": "2026-06-28T17:03Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:43",
+            "utc": "2026-06-28T19:43Z"
+          },
+          {
+            "local": "2026-06-29T01:08",
+            "utc": "2026-06-28T21:08Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:26",
+            "utc": "2026-06-28T15:26Z"
+          },
+          {
+            "local": "2026-06-28T21:03",
+            "utc": "2026-06-28T17:03Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:43",
+            "utc": "2026-06-28T19:43Z"
+          },
+          {
+            "local": "2026-06-29T01:08",
+            "utc": "2026-06-28T21:08Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "custom",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {
+          "maghribIsInterval": false,
+          "maghribValue": 20,
+          "ishaValue": 17
+        },
+        "adjustments": {},
+        "id": "custom-invalid-chronology"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:28",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:32",
+            "utc": "2026-06-28T19:32Z"
+          },
+          {
+            "local": "2026-06-29T01:01",
+            "utc": "2026-06-28T21:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:16",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:28",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:32",
+            "utc": "2026-06-28T19:32Z"
+          },
+          {
+            "local": "2026-06-29T01:01",
+            "utc": "2026-06-28T21:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "custom",
+        "coordinates": [
+          51.508,
+          -0.1281,
+          0
+        ],
+        "date": [
+          2026,
+          7,
+          9
+        ],
+        "offsetMinutes": 60,
+        "country": "GB",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {
+          "maghribIsInterval": false,
+          "maghribValue": 18,
+          "ishaIsInterval": true,
+          "ishaValue": 90
+        },
+        "adjustments": {},
+        "id": "london-unavailable-angle"
+      },
+      "expected": {
+        "times": [
+          null,
+          {
+            "local": "2026-07-09T04:54",
+            "utc": "2026-07-09T03:54Z"
+          },
+          {
+            "local": "2026-07-09T13:06",
+            "utc": "2026-07-09T12:06Z"
+          },
+          {
+            "local": "2026-07-09T17:26",
+            "utc": "2026-07-09T16:26Z"
+          },
+          {
+            "local": "2026-07-09T21:17",
+            "utc": "2026-07-09T20:17Z"
+          },
+          {
+            "local": "2026-07-09T21:17",
+            "utc": "2026-07-09T20:17Z"
+          },
+          {
+            "local": "2026-07-09T22:47",
+            "utc": "2026-07-09T21:47Z"
+          }
+        ],
+        "sunnah": [
+          null,
+          null
+        ],
+        "helpers": [
+          "none/sunrise",
+          "none/sunrise",
+          "none/sunrise",
+          "none/sunrise",
+          "none/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          null,
+          {
+            "local": "2026-07-09T04:54",
+            "utc": "2026-07-09T03:54Z"
+          },
+          {
+            "local": "2026-07-09T13:06",
+            "utc": "2026-07-09T12:06Z"
+          },
+          {
+            "local": "2026-07-09T17:26",
+            "utc": "2026-07-09T16:26Z"
+          },
+          {
+            "local": "2026-07-09T21:17",
+            "utc": "2026-07-09T20:17Z"
+          },
+          {
+            "local": "2026-07-09T21:17",
+            "utc": "2026-07-09T20:17Z"
+          },
+          {
+            "local": "2026-07-09T22:47",
+            "utc": "2026-07-09T21:47Z"
+          }
+        ],
+        "sunnah": [
+          null,
+          null
+        ],
+        "helpers": [
+          "none/sunrise",
+          "none/sunrise",
+          "none/sunrise",
+          "none/sunrise",
+          "none/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 4,
+          "current": "none",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 17,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 21,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 22,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "makkah",
+        "coordinates": [
+          21.42667,
+          39.82611,
+          0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 180,
+        "country": "sa",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": true,
+        "parameters": {},
+        "adjustments": {},
+        "id": "sa-ramadan"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T04:13",
+            "utc": "2026-06-28T01:13Z"
+          },
+          {
+            "local": "2026-06-28T05:41",
+            "utc": "2026-06-28T02:41Z"
+          },
+          {
+            "local": "2026-06-28T12:24",
+            "utc": "2026-06-28T09:24Z"
+          },
+          {
+            "local": "2026-06-28T15:43",
+            "utc": "2026-06-28T12:43Z"
+          },
+          {
+            "local": "2026-06-28T19:07",
+            "utc": "2026-06-28T16:07Z"
+          },
+          {
+            "local": "2026-06-28T19:07",
+            "utc": "2026-06-28T16:07Z"
+          },
+          {
+            "local": "2026-06-28T21:07",
+            "utc": "2026-06-28T18:07Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:41",
+            "utc": "2026-06-28T20:41Z"
+          },
+          {
+            "local": "2026-06-29T01:12",
+            "utc": "2026-06-28T22:12Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T04:13",
+            "utc": "2026-06-28T01:13Z"
+          },
+          {
+            "local": "2026-06-28T05:41",
+            "utc": "2026-06-28T02:41Z"
+          },
+          {
+            "local": "2026-06-28T12:24",
+            "utc": "2026-06-28T09:24Z"
+          },
+          {
+            "local": "2026-06-28T15:43",
+            "utc": "2026-06-28T12:43Z"
+          },
+          {
+            "local": "2026-06-28T19:07",
+            "utc": "2026-06-28T16:07Z"
+          },
+          {
+            "local": "2026-06-28T19:07",
+            "utc": "2026-06-28T16:07Z"
+          },
+          {
+            "local": "2026-06-28T21:07",
+            "utc": "2026-06-28T18:07Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:41",
+            "utc": "2026-06-28T20:41Z"
+          },
+          {
+            "local": "2026-06-29T01:12",
+            "utc": "2026-06-28T22:12Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "oman",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "sunnah-sohar"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:21",
+            "utc": "2026-06-28T08:21Z"
+          },
+          {
+            "local": "2026-06-28T15:42",
+            "utc": "2026-06-28T11:42Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:10",
+            "utc": "2026-06-28T15:10Z"
+          },
+          {
+            "local": "2026-06-28T20:35",
+            "utc": "2026-06-28T16:35Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:35",
+            "utc": "2026-06-28T19:35Z"
+          },
+          {
+            "local": "2026-06-29T01:03",
+            "utc": "2026-06-28T21:03Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T12:21",
+            "utc": "2026-06-28T08:21Z"
+          },
+          {
+            "local": "2026-06-28T15:42",
+            "utc": "2026-06-28T11:42Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:10",
+            "utc": "2026-06-28T15:10Z"
+          },
+          {
+            "local": "2026-06-28T20:35",
+            "utc": "2026-06-28T16:35Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:35",
+            "utc": "2026-06-28T19:35Z"
+          },
+          {
+            "local": "2026-06-29T01:03",
+            "utc": "2026-06-28T21:03Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "oman",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          12,
+          31
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "sunnah-year-rollover"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-12-31T05:36",
+            "utc": "2026-12-31T01:36Z"
+          },
+          {
+            "local": "2026-12-31T06:56",
+            "utc": "2026-12-31T02:56Z"
+          },
+          {
+            "local": "2026-12-31T12:21",
+            "utc": "2026-12-31T08:21Z"
+          },
+          {
+            "local": "2026-12-31T15:21",
+            "utc": "2026-12-31T11:21Z"
+          },
+          {
+            "local": "2026-12-31T17:36",
+            "utc": "2026-12-31T13:36Z"
+          },
+          {
+            "local": "2026-12-31T17:41",
+            "utc": "2026-12-31T13:41Z"
+          },
+          {
+            "local": "2026-12-31T18:58",
+            "utc": "2026-12-31T14:58Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-12-31T23:39",
+            "utc": "2026-12-31T19:39Z"
+          },
+          {
+            "local": "2027-01-01T01:38",
+            "utc": "2026-12-31T21:38Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-12-31T05:36",
+            "utc": "2026-12-31T01:36Z"
+          },
+          {
+            "local": "2026-12-31T06:56",
+            "utc": "2026-12-31T02:56Z"
+          },
+          {
+            "local": "2026-12-31T12:21",
+            "utc": "2026-12-31T08:21Z"
+          },
+          {
+            "local": "2026-12-31T15:21",
+            "utc": "2026-12-31T11:21Z"
+          },
+          {
+            "local": "2026-12-31T17:36",
+            "utc": "2026-12-31T13:36Z"
+          },
+          {
+            "local": "2026-12-31T17:41",
+            "utc": "2026-12-31T13:41Z"
+          },
+          {
+            "local": "2026-12-31T18:58",
+            "utc": "2026-12-31T14:58Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-12-31T23:39",
+            "utc": "2026-12-31T19:39Z"
+          },
+          {
+            "local": "2027-01-01T01:38",
+            "utc": "2026-12-31T21:38Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 5,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 6,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 19,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 20,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "oman",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2024,
+          2,
+          29
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "sunnah-leap-date"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2024-02-29T05:21",
+            "utc": "2024-02-29T01:21Z"
+          },
+          {
+            "local": "2024-02-29T06:36",
+            "utc": "2024-02-29T02:36Z"
+          },
+          {
+            "local": "2024-02-29T12:31",
+            "utc": "2024-02-29T08:31Z"
+          },
+          {
+            "local": "2024-02-29T15:51",
+            "utc": "2024-02-29T11:51Z"
+          },
+          {
+            "local": "2024-02-29T18:15",
+            "utc": "2024-02-29T14:15Z"
+          },
+          {
+            "local": "2024-02-29T18:20",
+            "utc": "2024-02-29T14:20Z"
+          },
+          {
+            "local": "2024-02-29T19:32",
+            "utc": "2024-02-29T15:32Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2024-02-29T23:50",
+            "utc": "2024-02-29T19:50Z"
+          },
+          {
+            "local": "2024-03-01T01:40",
+            "utc": "2024-02-29T21:40Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2024-02-29T05:21",
+            "utc": "2024-02-29T01:21Z"
+          },
+          {
+            "local": "2024-02-29T06:36",
+            "utc": "2024-02-29T02:36Z"
+          },
+          {
+            "local": "2024-02-29T12:31",
+            "utc": "2024-02-29T08:31Z"
+          },
+          {
+            "local": "2024-02-29T15:51",
+            "utc": "2024-02-29T11:51Z"
+          },
+          {
+            "local": "2024-02-29T18:15",
+            "utc": "2024-02-29T14:15Z"
+          },
+          {
+            "local": "2024-02-29T18:20",
+            "utc": "2024-02-29T14:20Z"
+          },
+          {
+            "local": "2024-02-29T19:32",
+            "utc": "2024-02-29T15:32Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2024-02-29T23:50",
+            "utc": "2024-02-29T19:50Z"
+          },
+          {
+            "local": "2024-03-01T01:40",
+            "utc": "2024-02-29T21:40Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 5,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 6,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 20,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "mwl",
+        "coordinates": [
+          50,
+          14,
+          3000
+        ],
+        "date": [
+          2026,
+          6,
+          21
+        ],
+        "offsetMinutes": 120,
+        "country": "CZ",
+        "city": "Prague",
+        "madhab": 0,
+        "rule": 3,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "sunnah-country-elevation",
+        "allowDartSunnahDifference": true
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-21T03:38",
+            "utc": "2026-06-21T01:38Z"
+          },
+          {
+            "local": "2026-06-21T04:39",
+            "utc": "2026-06-21T02:39Z"
+          },
+          {
+            "local": "2026-06-21T13:06",
+            "utc": "2026-06-21T11:06Z"
+          },
+          {
+            "local": "2026-06-21T17:25",
+            "utc": "2026-06-21T15:25Z"
+          },
+          {
+            "local": "2026-06-21T21:33",
+            "utc": "2026-06-21T19:33Z"
+          },
+          {
+            "local": "2026-06-21T21:33",
+            "utc": "2026-06-21T19:33Z"
+          },
+          {
+            "local": "2026-06-21T22:34",
+            "utc": "2026-06-21T20:34Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-22T00:36",
+            "utc": "2026-06-21T22:36Z"
+          },
+          {
+            "local": "2026-06-22T01:36",
+            "utc": "2026-06-21T23:36Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-21T03:38",
+            "utc": "2026-06-21T01:38Z"
+          },
+          {
+            "local": "2026-06-21T04:39",
+            "utc": "2026-06-21T02:39Z"
+          },
+          {
+            "local": "2026-06-21T13:06",
+            "utc": "2026-06-21T11:06Z"
+          },
+          {
+            "local": "2026-06-21T17:25",
+            "utc": "2026-06-21T15:25Z"
+          },
+          {
+            "local": "2026-06-21T21:33",
+            "utc": "2026-06-21T19:33Z"
+          },
+          {
+            "local": "2026-06-21T21:33",
+            "utc": "2026-06-21T19:33Z"
+          },
+          {
+            "local": "2026-06-21T22:34",
+            "utc": "2026-06-21T20:34Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-22T00:42",
+            "utc": "2026-06-21T22:42Z"
+          },
+          {
+            "local": "2026-06-22T01:44",
+            "utc": "2026-06-21T23:44Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 17,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 21,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 22,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "mwl",
+        "coordinates": [
+          59.9139,
+          10.7522,
+          0
+        ],
+        "date": [
+          2026,
+          6,
+          21
+        ],
+        "offsetMinutes": 120,
+        "country": "NO",
+        "city": "",
+        "madhab": 0,
+        "rule": 4,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "oslo-twilight-helpers"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-21T02:21",
+            "utc": "2026-06-21T00:21Z"
+          },
+          {
+            "local": "2026-06-21T03:54",
+            "utc": "2026-06-21T01:54Z"
+          },
+          {
+            "local": "2026-06-21T13:19",
+            "utc": "2026-06-21T11:19Z"
+          },
+          {
+            "local": "2026-06-21T18:00",
+            "utc": "2026-06-21T16:00Z"
+          },
+          {
+            "local": "2026-06-21T22:44",
+            "utc": "2026-06-21T20:44Z"
+          },
+          {
+            "local": "2026-06-21T22:44",
+            "utc": "2026-06-21T20:44Z"
+          },
+          {
+            "local": "2026-06-21T00:12",
+            "utc": "2026-06-20T22:12Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-22T00:33",
+            "utc": "2026-06-21T22:33Z"
+          },
+          {
+            "local": "2026-06-22T01:09",
+            "utc": "2026-06-21T23:09Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/sunrise",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/asr",
+          "isha/asr",
+          "isha/asr",
+          "isha/asr",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-21T02:21",
+            "utc": "2026-06-21T00:21Z"
+          },
+          {
+            "local": "2026-06-21T03:54",
+            "utc": "2026-06-21T01:54Z"
+          },
+          {
+            "local": "2026-06-21T13:19",
+            "utc": "2026-06-21T11:19Z"
+          },
+          {
+            "local": "2026-06-21T18:00",
+            "utc": "2026-06-21T16:00Z"
+          },
+          {
+            "local": "2026-06-21T22:44",
+            "utc": "2026-06-21T20:44Z"
+          },
+          {
+            "local": "2026-06-21T22:44",
+            "utc": "2026-06-21T20:44Z"
+          },
+          {
+            "local": "2026-06-21T00:12",
+            "utc": "2026-06-20T22:12Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-22T00:33",
+            "utc": "2026-06-21T22:33Z"
+          },
+          {
+            "local": "2026-06-22T01:09",
+            "utc": "2026-06-21T23:09Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/sunrise",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/asr",
+          "isha/asr",
+          "isha/asr",
+          "isha/asr",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "isha"
+        },
+        {
+          "localHour": 1,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 4,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 5,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 17,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 21,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 22,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 23,
+          "current": "maghrib",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "mwl",
+        "coordinates": [
+          59.9139,
+          10.7522,
+          0
+        ],
+        "date": [
+          2026,
+          6,
+          21
+        ],
+        "offsetMinutes": 120,
+        "country": "NO",
+        "city": "",
+        "madhab": 0,
+        "rule": 2,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "oslo-middle-helpers"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-21T01:19",
+            "utc": "2026-06-20T23:19Z"
+          },
+          {
+            "local": "2026-06-21T03:54",
+            "utc": "2026-06-21T01:54Z"
+          },
+          {
+            "local": "2026-06-21T13:19",
+            "utc": "2026-06-21T11:19Z"
+          },
+          {
+            "local": "2026-06-21T18:00",
+            "utc": "2026-06-21T16:00Z"
+          },
+          {
+            "local": "2026-06-21T22:44",
+            "utc": "2026-06-21T20:44Z"
+          },
+          {
+            "local": "2026-06-21T22:44",
+            "utc": "2026-06-21T20:44Z"
+          },
+          {
+            "local": "2026-06-21T01:19",
+            "utc": "2026-06-20T23:19Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-22T00:02",
+            "utc": "2026-06-21T22:02Z"
+          },
+          {
+            "local": "2026-06-22T00:27",
+            "utc": "2026-06-21T22:27Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "isha/sunrise",
+          "isha/sunrise",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/asr",
+          "isha/asr",
+          "isha/asr",
+          "isha/asr",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-21T01:19",
+            "utc": "2026-06-20T23:19Z"
+          },
+          {
+            "local": "2026-06-21T03:54",
+            "utc": "2026-06-21T01:54Z"
+          },
+          {
+            "local": "2026-06-21T13:19",
+            "utc": "2026-06-21T11:19Z"
+          },
+          {
+            "local": "2026-06-21T18:00",
+            "utc": "2026-06-21T16:00Z"
+          },
+          {
+            "local": "2026-06-21T22:44",
+            "utc": "2026-06-21T20:44Z"
+          },
+          {
+            "local": "2026-06-21T22:44",
+            "utc": "2026-06-21T20:44Z"
+          },
+          {
+            "local": "2026-06-21T01:19",
+            "utc": "2026-06-20T23:19Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-22T00:02",
+            "utc": "2026-06-21T22:02Z"
+          },
+          {
+            "local": "2026-06-22T00:27",
+            "utc": "2026-06-21T22:27Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "isha/sunrise",
+          "isha/sunrise",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/asr",
+          "isha/asr",
+          "isha/asr",
+          "isha/asr",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/maghrib",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "isha",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 3,
+          "current": "isha",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 4,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 5,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 17,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 21,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 22,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 23,
+          "current": "maghrib",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "mwl",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {
+          "dhuhr": -409
+        },
+        "id": "equal-boundaries"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:28",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:32",
+            "utc": "2026-06-28T19:32Z"
+          },
+          {
+            "local": "2026-06-29T01:01",
+            "utc": "2026-06-28T21:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:28",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:32",
+            "utc": "2026-06-28T19:32Z"
+          },
+          {
+            "local": "2026-06-29T01:01",
+            "utc": "2026-06-28T21:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 7,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 8,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 9,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 10,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 11,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 12,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "mwl",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 240,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {
+          "dhuhr": 600
+        },
+        "id": "reordered-adjustments"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T22:16",
+            "utc": "2026-06-28T18:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:28",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:32",
+            "utc": "2026-06-28T19:32Z"
+          },
+          {
+            "local": "2026-06-29T01:01",
+            "utc": "2026-06-28T21:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "asr/dhuhr",
+          "asr/dhuhr",
+          "asr/dhuhr",
+          "asr/dhuhr",
+          "maghrib/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:59",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T05:27",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T22:16",
+            "utc": "2026-06-28T18:16Z"
+          },
+          {
+            "local": "2026-06-28T15:37",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T19:05",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:28",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-28T23:32",
+            "utc": "2026-06-28T19:32Z"
+          },
+          {
+            "local": "2026-06-29T01:01",
+            "utc": "2026-06-28T21:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "asr/dhuhr",
+          "asr/dhuhr",
+          "asr/dhuhr",
+          "asr/dhuhr",
+          "maghrib/dhuhr",
+          "isha/dhuhr",
+          "isha/dhuhr",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 13,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "sunrise",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 17,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 21,
+          "current": "isha",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 22,
+          "current": "isha",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 23,
+          "current": "dhuhr",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "mwl",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": -210,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "negative-offset-helpers"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T20:29",
+            "utc": "2026-06-28T23:59Z"
+          },
+          {
+            "local": "2026-06-28T21:57",
+            "utc": "2026-06-29T01:27Z"
+          },
+          {
+            "local": "2026-06-28T04:46",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T08:07",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T11:35",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T11:35",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T12:58",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-29T04:02",
+            "utc": "2026-06-29T07:32Z"
+          },
+          {
+            "local": "2026-06-29T09:31",
+            "utc": "2026-06-29T13:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "dhuhr/fajr",
+          "dhuhr/fajr",
+          "dhuhr/fajr",
+          "dhuhr/fajr",
+          "asr/fajr",
+          "asr/fajr",
+          "asr/fajr",
+          "maghrib/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/sunrise",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T20:29",
+            "utc": "2026-06-28T23:59Z"
+          },
+          {
+            "local": "2026-06-28T21:57",
+            "utc": "2026-06-29T01:27Z"
+          },
+          {
+            "local": "2026-06-28T04:46",
+            "utc": "2026-06-28T08:16Z"
+          },
+          {
+            "local": "2026-06-28T08:07",
+            "utc": "2026-06-28T11:37Z"
+          },
+          {
+            "local": "2026-06-28T11:35",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T11:35",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T12:58",
+            "utc": "2026-06-28T16:28Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-29T04:02",
+            "utc": "2026-06-29T07:32Z"
+          },
+          {
+            "local": "2026-06-29T09:31",
+            "utc": "2026-06-29T13:01Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "dhuhr/fajr",
+          "dhuhr/fajr",
+          "dhuhr/fajr",
+          "dhuhr/fajr",
+          "asr/fajr",
+          "asr/fajr",
+          "asr/fajr",
+          "maghrib/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/fajr",
+          "isha/sunrise",
+          "isha/none",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 4,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 5,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 6,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 7,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 8,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 9,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 10,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 11,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 12,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 13,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 14,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 15,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 16,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 17,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 18,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 19,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 20,
+          "current": "isha",
+          "next": "fajr"
+        },
+        {
+          "localHour": 21,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 22,
+          "current": "sunrise",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "sunrise",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "oman",
+        "coordinates": [
+          24.3486,
+          56.6953,
+          5.0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 345,
+        "country": "OM",
+        "city": "",
+        "madhab": 0,
+        "rule": 1,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "fractional-offset"
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T05:44",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T07:12",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T14:06",
+            "utc": "2026-06-28T08:21Z"
+          },
+          {
+            "local": "2026-06-28T17:27",
+            "utc": "2026-06-28T11:42Z"
+          },
+          {
+            "local": "2026-06-28T20:50",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:55",
+            "utc": "2026-06-28T15:10Z"
+          },
+          {
+            "local": "2026-06-28T22:20",
+            "utc": "2026-06-28T16:35Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-29T01:20",
+            "utc": "2026-06-28T19:35Z"
+          },
+          {
+            "local": "2026-06-29T02:48",
+            "utc": "2026-06-28T21:03Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "maghrib/isha",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T05:44",
+            "utc": "2026-06-27T23:59Z"
+          },
+          {
+            "local": "2026-06-28T07:12",
+            "utc": "2026-06-28T01:27Z"
+          },
+          {
+            "local": "2026-06-28T14:06",
+            "utc": "2026-06-28T08:21Z"
+          },
+          {
+            "local": "2026-06-28T17:27",
+            "utc": "2026-06-28T11:42Z"
+          },
+          {
+            "local": "2026-06-28T20:50",
+            "utc": "2026-06-28T15:05Z"
+          },
+          {
+            "local": "2026-06-28T20:55",
+            "utc": "2026-06-28T15:10Z"
+          },
+          {
+            "local": "2026-06-28T22:20",
+            "utc": "2026-06-28T16:35Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-29T01:20",
+            "utc": "2026-06-28T19:35Z"
+          },
+          {
+            "local": "2026-06-29T02:48",
+            "utc": "2026-06-28T21:03Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "maghrib/isha",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 5,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 6,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 7,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 14,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 17,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 21,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 22,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "mwl",
+        "coordinates": [
+          78.2232,
+          15.6469,
+          0
+        ],
+        "date": [
+          2026,
+          6,
+          21
+        ],
+        "offsetMinutes": 120,
+        "country": "NO",
+        "city": "",
+        "madhab": 0,
+        "rule": 0,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "undefined-polar-boundaries"
+      },
+      "expected": {
+        "times": [
+          null,
+          null,
+          {
+            "local": "2026-06-21T12:59",
+            "utc": "2026-06-21T10:59Z"
+          },
+          {
+            "local": "2026-06-21T19:08",
+            "utc": "2026-06-21T17:08Z"
+          },
+          null,
+          null,
+          null
+        ],
+        "sunnah": [
+          null,
+          null
+        ],
+        "helpers": [
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/none",
+          "asr/none",
+          "asr/none",
+          "asr/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          null,
+          null,
+          {
+            "local": "2026-06-21T12:59",
+            "utc": "2026-06-21T10:59Z"
+          },
+          {
+            "local": "2026-06-21T19:08",
+            "utc": "2026-06-21T17:08Z"
+          },
+          null,
+          null,
+          null
+        ],
+        "sunnah": [
+          null,
+          null
+        ],
+        "helpers": [
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "none/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/none",
+          "asr/none",
+          "asr/none",
+          "asr/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 4,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 5,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 6,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "none",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 17,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 18,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 19,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 20,
+          "current": "asr",
+          "next": "none"
+        },
+        {
+          "localHour": 21,
+          "current": "asr",
+          "next": "none"
+        },
+        {
+          "localHour": 22,
+          "current": "asr",
+          "next": "none"
+        },
+        {
+          "localHour": 23,
+          "current": "asr",
+          "next": "none"
+        }
+      ]
+    },
+    {
+      "input": {
+        "construction": "preset",
+        "method": "birmingham",
+        "coordinates": [
+          51.508,
+          -0.1281,
+          0
+        ],
+        "date": [
+          2026,
+          6,
+          28
+        ],
+        "offsetMinutes": 60,
+        "country": "GB",
+        "city": "London",
+        "madhab": 0,
+        "rule": 0,
+        "ramadan": false,
+        "parameters": {},
+        "adjustments": {},
+        "id": "excluded-city-tweaks",
+        "allowDartPrayerDifference": true,
+        "allowDartSunnahDifference": true
+      },
+      "expected": {
+        "times": [
+          {
+            "local": "2026-06-28T03:42",
+            "utc": "2026-06-28T02:42Z"
+          },
+          {
+            "local": "2026-06-28T04:46",
+            "utc": "2026-06-28T03:46Z"
+          },
+          {
+            "local": "2026-06-28T13:04",
+            "utc": "2026-06-28T12:04Z"
+          },
+          {
+            "local": "2026-06-28T17:26",
+            "utc": "2026-06-28T16:26Z"
+          },
+          {
+            "local": "2026-06-28T21:22",
+            "utc": "2026-06-28T20:22Z"
+          },
+          {
+            "local": "2026-06-28T21:22",
+            "utc": "2026-06-28T20:22Z"
+          },
+          {
+            "local": "2026-06-28T22:25",
+            "utc": "2026-06-28T21:25Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-29T00:33",
+            "utc": "2026-06-28T23:33Z"
+          },
+          {
+            "local": "2026-06-29T01:36",
+            "utc": "2026-06-29T00:36Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none"
+        ]
+      },
+      "dart": {
+        "times": [
+          {
+            "local": "2026-06-28T03:37",
+            "utc": "2026-06-28T02:37Z"
+          },
+          {
+            "local": "2026-06-28T04:40",
+            "utc": "2026-06-28T03:40Z"
+          },
+          {
+            "local": "2026-06-28T12:57",
+            "utc": "2026-06-28T11:57Z"
+          },
+          {
+            "local": "2026-06-28T17:22",
+            "utc": "2026-06-28T16:22Z"
+          },
+          {
+            "local": "2026-06-28T21:18",
+            "utc": "2026-06-28T20:18Z"
+          },
+          {
+            "local": "2026-06-28T21:18",
+            "utc": "2026-06-28T20:18Z"
+          },
+          {
+            "local": "2026-06-28T22:21",
+            "utc": "2026-06-28T21:21Z"
+          }
+        ],
+        "sunnah": [
+          {
+            "local": "2026-06-29T00:31",
+            "utc": "2026-06-28T23:31Z"
+          },
+          {
+            "local": "2026-06-29T01:35",
+            "utc": "2026-06-29T00:35Z"
+          }
+        ],
+        "helpers": [
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "none/fajr",
+          "fajr/sunrise",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "sunrise/dhuhr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "dhuhr/asr",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "asr/maghrib",
+          "maghrib/isha",
+          "isha/none"
+        ]
+      },
+      "chronologicalHelpers": [
+        {
+          "localHour": 0,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 1,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 2,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 3,
+          "current": "none",
+          "next": "fajr"
+        },
+        {
+          "localHour": 4,
+          "current": "fajr",
+          "next": "sunrise"
+        },
+        {
+          "localHour": 5,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 6,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 7,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 8,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 9,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 10,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 11,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 12,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 13,
+          "current": "sunrise",
+          "next": "dhuhr"
+        },
+        {
+          "localHour": 14,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 15,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 16,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 17,
+          "current": "dhuhr",
+          "next": "asr"
+        },
+        {
+          "localHour": 18,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 19,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 20,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 21,
+          "current": "asr",
+          "next": "maghrib"
+        },
+        {
+          "localHour": 22,
+          "current": "maghrib",
+          "next": "isha"
+        },
+        {
+          "localHour": 23,
+          "current": "isha",
+          "next": "none"
+        }
+      ]
+    }
+  ]
+}
