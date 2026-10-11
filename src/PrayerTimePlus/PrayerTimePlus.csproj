@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>PrayerTimePlus</AssemblyName>
+    <RootNamespace>PrayerTimePlus</RootNamespace>
+    <Version>0.1.0</Version>
+    <PackageId>PrayerTimePlus</PackageId>
+    <Authors>abdulwahed-s</Authors>
+    <Description>Dependency-free Islamic prayer times and Sunnah times for .NET.</Description>
+    <PackageTags>islam;prayer-times;salah;adhan;astronomy</PackageTags>
+    <PackageProjectUrl>https://github.com/abdulwahed-s/prayer-time-plus-csharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/abdulwahed-s/prayer-time-plus-csharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <DebugType>portable</DebugType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+    <InternalsVisibleTo Include="PrayerTimePlus.Tests" />
+  </ItemGroup>
+</Project>
