@@ -7,6 +7,13 @@ of the Dart, Swift and Kotlin 0.3.0 siblings. The initial C# package is **0.3.0*
 aligned with that family version; helper and city-context differences are
 described below.
 
+> **Also available for [Dart / Flutter](https://github.com/abdulwahed-s/prayer_time_plus),
+> [Swift](https://github.com/abdulwahed-s/prayer-time-plus-swift), and
+> [Kotlin / JVM](https://github.com/abdulwahed-s/prayer-time-plus-kotlin).** All four
+> are faithful ports of the same solar engine and match supported prayer-time
+> calculations to the minute for identical inputs.
+> See [Other platforms](#other-platforms).
+
 ## Install
 
 Version 0.3.0 is prepared for NuGet distribution. To install the locally built
@@ -221,5 +228,22 @@ dotnet run --project tools/PrayerTimePlus.DataGenerator -c Release
 CI runs the checks on Windows, Linux and macOS. Runtime scope covers the
 calculation library; Qibla, Shia presets, static city tables, seasonal changes,
 application city tweaks, geolocation, scheduling and native UI are outside it.
+
+## Other platforms
+
+The same solar engine, ported idiomatically to four ecosystems, with matching
+supported prayer-time calculations to the minute:
+
+| Platform | Package | Repository |
+|---|---|---|
+| **C# / .NET** — you are here | [`PrayerTimePlus` (0.3.0 prepared, unpublished)](#install) | [prayer-time-plus-csharp](https://github.com/abdulwahed-s/prayer-time-plus-csharp) |
+| Dart / Flutter | [`prayer_time_plus`](https://pub.dev/packages/prayer_time_plus) | [prayer_time_plus](https://github.com/abdulwahed-s/prayer_time_plus) |
+| Swift · iOS, macOS, watchOS, tvOS, Linux | [Swift Package Index](https://swiftpackageindex.com/abdulwahed-s/prayer-time-plus-swift) | [prayer-time-plus-swift](https://github.com/abdulwahed-s/prayer-time-plus-swift) |
+| Kotlin / JVM | [`io.github.abdulwahed-s:prayer-time-plus`](https://central.sonatype.com/artifact/io.github.abdulwahed-s/prayer-time-plus) | [prayer-time-plus-kotlin](https://github.com/abdulwahed-s/prayer-time-plus-kotlin) |
+
+See [Current, next and Sunnah times](#current-next-and-sunnah-times) for helper
+ordering and city-context compatibility details.
+
+## License
 
 Licensed under [MIT](LICENSE).
