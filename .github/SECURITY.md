@@ -4,7 +4,8 @@
 
 PrayerTimePlus is pre-1.0. Security maintenance focuses on the latest `0.x`
 release. Version **0.3.0** is the initial C# release, distributed through
-GitHub Releases. NuGet.org publication is a separate distribution step.
+[NuGet.org](https://www.nuget.org/packages/PrayerTimePlus) and
+[GitHub Releases](https://github.com/abdulwahed-s/prayer-time-plus-csharp/releases).
 
 | Version | Status |
 | ------- | ------ |

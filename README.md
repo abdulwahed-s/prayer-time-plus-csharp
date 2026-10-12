@@ -1,5 +1,7 @@
 # PrayerTimePlus for .NET
 
+[![NuGet](https://img.shields.io/nuget/v/PrayerTimePlus.svg)](https://www.nuget.org/packages/PrayerTimePlus)
+
 A dependency-free C# library for Islamic prayer times and Sunnah night portions.
 The `net8.0` library uses immutable inputs, nullable `DateTimeOffset` results and
 the caller's UTC offset. It implements the supported prayer-time calculations
@@ -16,16 +18,22 @@ described below.
 
 ## Install
 
-Download `PrayerTimePlus.0.3.0.nupkg` from
+Install [PrayerTimePlus from NuGet](https://www.nuget.org/packages/PrayerTimePlus)
+from your consumer project's directory:
+
+```sh
+dotnet add package PrayerTimePlus --version 0.3.0
+```
+
+The library requires .NET 8 or later and has no third-party runtime dependencies.
+
+Alternatively, download `PrayerTimePlus.0.3.0.nupkg` from
 [GitHub Releases](https://github.com/abdulwahed-s/prayer-time-plus-csharp/releases)
-into a local package folder, then install it into a consumer project:
+into a local package folder and install from that folder:
 
 ```sh
 dotnet add package PrayerTimePlus --version 0.3.0 --source /absolute/path/to/downloaded/packages
 ```
-
-Public feed publication is a separate release action. The library requires
-.NET 8 or later and has no third-party runtime dependencies.
 
 ## Calculate a day
 
@@ -259,7 +267,7 @@ supported prayer-time calculations to the minute:
 
 | Platform | Package | Repository |
 |---|---|---|
-| **C# / .NET** — you are here | [`PrayerTimePlus`](https://github.com/abdulwahed-s/prayer-time-plus-csharp/releases) | [prayer-time-plus-csharp](https://github.com/abdulwahed-s/prayer-time-plus-csharp) |
+| **C# / .NET** — you are here | [`PrayerTimePlus`](https://www.nuget.org/packages/PrayerTimePlus) | [prayer-time-plus-csharp](https://github.com/abdulwahed-s/prayer-time-plus-csharp) |
 | Dart / Flutter | [`prayer_time_plus`](https://pub.dev/packages/prayer_time_plus) | [prayer_time_plus](https://github.com/abdulwahed-s/prayer_time_plus) |
 | Swift · iOS, macOS, watchOS, tvOS, Linux | [Swift Package Index](https://swiftpackageindex.com/abdulwahed-s/prayer-time-plus-swift) | [prayer-time-plus-swift](https://github.com/abdulwahed-s/prayer-time-plus-swift) |
 | Kotlin / JVM | [`io.github.abdulwahed-s:prayer-time-plus`](https://central.sonatype.com/artifact/io.github.abdulwahed-s/prayer-time-plus) | [prayer-time-plus-kotlin](https://github.com/abdulwahed-s/prayer-time-plus-kotlin) |
