@@ -2,7 +2,21 @@ name: CI
 
 on:
   push:
+    branches: ['**']
   pull_request:
+  workflow_call:
+    inputs:
+      release_tag:
+        description: Version tag to check out and validate for a release.
+        type: string
+        default: ''
+      upload_packages:
+        description: Save verified packages and release notes for the release job.
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
 
 jobs:
   verify:
@@ -13,11 +27,26 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_tag || github.sha }}
+          persist-credentials: false
+      - name: Validate release version and prepare notes
+        if: inputs.release_tag != ''
+        shell: pwsh
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        run: |
+          $release = ./tools/Get-ReleaseMetadata.ps1 -Tag $env:RELEASE_TAG
+          New-Item -ItemType Directory -Force -Path artifacts | Out-Null
+          $release.Notes | Set-Content -LiteralPath artifacts/release-notes.md -Encoding utf8
       - uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
           dotnet-version: '8.0.x'
           dotnet-quality: ga
+      - name: Check release workflow helpers
+        shell: pwsh
+        run: ./tests/ReleaseWorkflow.Tests.ps1
       - run: dotnet restore PrayerTimePlus.slnx
       - run: dotnet build PrayerTimePlus.slnx -c Release --no-restore -p:ContinuousIntegrationBuild=true
       - run: dotnet format PrayerTimePlus.slnx --verify-no-changes --no-restore
@@ -28,3 +57,14 @@ jobs:
       - name: Verify local package consumer
         shell: pwsh
         run: ./tools/Verify-Package.ps1
+      - name: Save verified release packages
+        if: inputs.upload_packages && runner.os == 'Linux'
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: release-packages
+          path: |
+            artifacts/packages/*.nupkg
+            artifacts/packages/*.snupkg
+            artifacts/release-notes.md
+          if-no-files-found: error
+          retention-days: 7

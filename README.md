@@ -16,11 +16,12 @@ described below.
 
 ## Install
 
-Version 0.3.0 is prepared for NuGet distribution. To install the locally built
-package into a consumer project:
+Download `PrayerTimePlus.0.3.0.nupkg` from
+[GitHub Releases](https://github.com/abdulwahed-s/prayer-time-plus-csharp/releases)
+into a local package folder, then install it into a consumer project:
 
 ```sh
-dotnet add package PrayerTimePlus --version 0.3.0 --source /absolute/path/to/artifacts/packages
+dotnet add package PrayerTimePlus --version 0.3.0 --source /absolute/path/to/downloaded/packages
 ```
 
 Public feed publication is a separate release action. The library requires
@@ -229,6 +230,28 @@ CI runs the checks on Windows, Linux and macOS. Runtime scope covers the
 calculation library; Qibla, Shia presets, static city tables, seasonal changes,
 application city tweaks, geolocation, scheduling and native UI are outside it.
 
+## GitHub release pipeline
+
+[The Release workflow](.github/workflows/release.yml) runs when a version tag is
+pushed. The tag must match `<Version>` in the library project and have release
+notes in [CHANGELOG.md](CHANGELOG.md). Both `v0.3.0` and `0.3.0` tag formats are
+supported. After updating the version and changelog and committing the changes:
+
+```sh
+git tag v0.3.0
+git push origin v0.3.0
+```
+
+The workflow reuses the Windows, Linux and macOS CI checks, verifies packaged
+consumers on .NET 8 and .NET 10, then publishes the `.nupkg`, `.snupkg` and
+`SHA256SUMS` as GitHub Release assets. Release notes come from the matching
+changelog section. The built-in GitHub token supplies release permissions.
+
+For an existing tag, **Actions → Release → Run workflow** can verify packages
+without publishing; enable **publish** to create the release. Completed releases
+are preserved on reruns, and interrupted draft uploads can be resumed. NuGet.org
+publication remains a separate step using the released `.nupkg`.
+
 ## Other platforms
 
 The same solar engine, ported idiomatically to four ecosystems, with matching
@@ -236,7 +259,7 @@ supported prayer-time calculations to the minute:
 
 | Platform | Package | Repository |
 |---|---|---|
-| **C# / .NET** — you are here | [`PrayerTimePlus` (0.3.0 prepared, unpublished)](#install) | [prayer-time-plus-csharp](https://github.com/abdulwahed-s/prayer-time-plus-csharp) |
+| **C# / .NET** — you are here | [`PrayerTimePlus`](https://github.com/abdulwahed-s/prayer-time-plus-csharp/releases) | [prayer-time-plus-csharp](https://github.com/abdulwahed-s/prayer-time-plus-csharp) |
 | Dart / Flutter | [`prayer_time_plus`](https://pub.dev/packages/prayer_time_plus) | [prayer_time_plus](https://github.com/abdulwahed-s/prayer_time_plus) |
 | Swift · iOS, macOS, watchOS, tvOS, Linux | [Swift Package Index](https://swiftpackageindex.com/abdulwahed-s/prayer-time-plus-swift) | [prayer-time-plus-swift](https://github.com/abdulwahed-s/prayer-time-plus-swift) |
 | Kotlin / JVM | [`io.github.abdulwahed-s:prayer-time-plus`](https://central.sonatype.com/artifact/io.github.abdulwahed-s/prayer-time-plus) | [prayer-time-plus-kotlin](https://github.com/abdulwahed-s/prayer-time-plus-kotlin) |

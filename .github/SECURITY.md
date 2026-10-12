@@ -2,13 +2,13 @@
 
 ## Supported versions
 
-PrayerTimePlus is pre-1.0. The initial C# package, version **0.3.0**, is prepared
-but unpublished. Fixes currently land on the development branch. After
-publication, security maintenance will focus on the latest `0.x` release.
+PrayerTimePlus is pre-1.0. Security maintenance focuses on the latest `0.x`
+release. Version **0.3.0** is the initial C# release, distributed through
+GitHub Releases. NuGet.org publication is a separate distribution step.
 
 | Version | Status |
 | ------- | ------ |
-| 0.3.0 (prepared, unpublished) | Current development version |
+| 0.3.x | Supported |
 | Earlier C# versions | No published releases |
 
 ## Reporting a vulnerability

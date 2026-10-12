@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.3.0 — initial C# package (prepared, unpublished)
+## 0.3.0 — initial C# package
 
 This is the first C# release, aligned with the siblings' 0.3.0 calculation
 behavior. No C# 0.1.x or 0.2.x releases were published.
@@ -22,3 +22,5 @@ behavior. No C# 0.1.x or 0.2.x releases were published.
   and Sunnah preserves country/city context as in Kotlin.
 - Add reproducible focused captures with source revisions, custom/Sunnah UTC
   instants and explicit helper expectations, plus .NET 8 and .NET 10 package consumers.
+- Build and upload GitHub Releases from version tags after cross-platform
+  verification, including NuGet packages, portable symbols and SHA256 checksums.
